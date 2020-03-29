@@ -24,15 +24,15 @@ function googleLogin() {
 
 function registerUser() {
 
-var Fname =  $("#Fname").val();
-var Lname = $("#Lname").val();
-var email = $("#email").val();
+    var Fname =  $("#Fname").val();
+    var Lname = $("#Lname").val();
+    var email = $("#email").val();
 
-console.log(Fname);
-console.log(Lname);
-console.log(email);
+    console.log(Fname);
+    console.log(Lname);
+    console.log(email);
 
-var newUser = {
+    var newUser = {
         FirstName: $("#Fname").val(),
         LastName: $("#Lname").val(),
         email: $("#email").val()
@@ -44,6 +44,8 @@ var newUser = {
 
     .then(function() {
         console.log("success");
-    }
-    );
+    });
+
+
+    window.location = "./profile.html"
 }   

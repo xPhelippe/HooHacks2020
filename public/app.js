@@ -30,8 +30,10 @@ function registerUser() {
         email: $("#email").val()
     };
 
-    const db = firebase.firestore();
+    //grab the firestore database
+    const db = firebase.firestore(); 
 
+    //add the new user to the UserData collection
     db.collection("UserData").add(newUser)
 
     .then(function() {
@@ -39,5 +41,10 @@ function registerUser() {
     });
 
 
-    window.location.replace = "./profile.html";
+    sessionStorage.setItem("FirstName",newUser.FirstName);
+
+    console.log(sessionStorage.getItem("FirstName"));
+
+    //redirect to a new page
+    window.location = "./profile.html";
 }   
